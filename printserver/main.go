@@ -13,11 +13,11 @@ func main() {
 	flag.Parse()
 
 	printer := flag.Arg(0)
-	port := ":" + flag.Arg(1)
+	addr := flag.Arg(1)
 
-	log.Printf("Listening on %s", port)
+	log.Printf("Listening on %s", addr)
 
-	l, err := net.Listen("tcp4", port)
+	l, err := net.Listen("tcp4", addr)
 	if err != nil {
 		panic(err)
 	}
