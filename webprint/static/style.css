@@ -6,7 +6,7 @@
 	--dark0: #222831;
 	--dark1: #393E46;
 	--light0: #EEEEEE;
-	--light1: #C0C0C0;
+	--light1: #A0A0A0;
 }
 
 @viewport {
@@ -26,6 +26,11 @@ body {
 
 * {
 	font-family: "Roboto Slab", serif;
+}
+
+::placeholder {
+	color: var(--light1);
+	opacity: 1;
 }
 
 input[type="file"] {
@@ -53,7 +58,7 @@ button:disabled, button[disabled], label:has(> input[type="file"][disabled]) {
 	color: var(--light1);
 }
 
-textarea {
+textarea, input[type="text"], .textarea {
 	background-color: var(--dark1);
 	padding: 0.5em;
 	border-radius: 0.5em;
@@ -61,13 +66,14 @@ textarea {
 	border-color: var(--light1);
 	border-width: 2px;
 	color: var(--light0);
+	font-size: 12pt;
 }
 
-textarea:focus {
+textarea:focus, input[type="text"]:focus, .textarea:focus {
 	outline: none !important;
 }
 
-textarea.mono {
+.mono, .mono * {
 	font-family: "Roboto Mono", monospace;
 }
 

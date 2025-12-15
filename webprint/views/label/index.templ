@@ -1,51 +1,23 @@
 package label
 
-import (
-	"github.com/hs-mb/label/webprint/views"
-)
+templ Buttons() {
+	<div class="buttons">
+		{ children...}
+	</div>
 
-templ Raw() {
-	@views.Layout() {
-		@labelCreation("EPL2 direkt drucken") {
-			<textarea class="mono" id="raw-input" rows="15" placeholder='EPL2-Code, z. B.:&#10;&#10;N&#10;A50,50,0,3,1,1,N,"Label"&#10;...'></textarea>
-			<p id="raw-error"></p>
-			<hr/>
-			<div class="buttons">
-				<label>
-					<input type="file" id="raw-file"/>
-					Datei hochladen
-				</label>
-				<button id="raw-print">Drucken</button>
-			</div>
-
-			<style>
-				#raw-input {
-					resize: vertical;
-					box-sizing: border-box;
-					width: 100%;
-				}
-
-				.buttons {
-					box-sizing: border-box;
-					width: 100%;
-					display: flex;
-					justify-content: right;
-					gap: 7px;
-				}
-			</style>
+	<style>
+		.buttons {
+			box-sizing: border-box;
+			width: 100%;
+			display: flex;
+			justify-content: right;
+			gap: 7px;
 		}
-	}
+	</style>
 }
 
-templ Hackspace() {
-	@views.Layout() {
-		@labelCreation("Hackspace-Label drucken") {
-		}
-	}
-}
-
-templ labelCreation(title string) {
-	<div class="sized-content label-creation">
+templ LabelCreation(title string) {
+	<div class="sized-content">
 		<h2>{ title }</h2>
 		<hr/>
 		{ children... }

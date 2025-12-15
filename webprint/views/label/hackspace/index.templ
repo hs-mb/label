@@ -1,0 +1,33 @@
+package hackspace
+
+import (
+	"github.com/hs-mb/label/webprint/views"
+	"github.com/hs-mb/label/webprint/views/label"
+)
+
+templ Index() {
+	@views.Layout() {
+		@label.LabelCreation("Hackspace-Label drucken") {
+			<div id="hs-text" class="textarea mono" placeholder="Z.B.: PLA Müll ..." contenteditable></div>
+			<p id="hs-error"></p>
+			<hr/>
+			@label.Buttons() {
+				<button id="hs-print">Drucken</button>
+			}
+
+			<style>
+				#hs-text {
+					box-sizing: border-box;
+					width: 100%;
+					overflow-wrap: anywhere;
+				}
+				#hs-text:empty:before {
+					content: attr(placeholder);
+					pointer-events: none;
+					display: block;
+					color: var(--light1);
+				}
+			</style>
+		}
+	}
+}

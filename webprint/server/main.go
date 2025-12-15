@@ -9,7 +9,8 @@ import (
 	"net/http"
 
 	"github.com/hs-mb/label/webprint/views"
-	"github.com/hs-mb/label/webprint/views/label"
+	"github.com/hs-mb/label/webprint/views/label/hackspace"
+	"github.com/hs-mb/label/webprint/views/label/raw"
 )
 
 var StaticDir = "./static"
@@ -29,10 +30,10 @@ func main() {
 		views.Index().Render(ctx, w)
 	})
 	mux.HandleFunc("GET /label/raw", func(w http.ResponseWriter, r *http.Request) {
-		label.Raw().Render(ctx, w)
+		raw.Index().Render(ctx, w)
 	})
 	mux.HandleFunc("GET /label/hackspace", func(w http.ResponseWriter, r *http.Request) {
-		label.Hackspace().Render(ctx, w)
+		hackspace.Index().Render(ctx, w)
 	})
 
 	mux.HandleFunc("POST /label/print", func(w http.ResponseWriter, r *http.Request) {
