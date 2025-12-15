@@ -29,7 +29,7 @@ func Layout() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"stylesheet\" href=\"/static/style.css\"><script src=\"/static/wasm/wasm_exec.js\"></script><script>\n\t\t\t\tconst go = new Go();\n\t\t\t\tWebAssembly.instantiateStreaming(fetch(\"/static/wasm/main.wasm\"), go.importObject).then((result) => {\n\t\t\t\t\tgo.run(result.instance);\n\t\t\t\t});\n\t\t\t</script><title>Labels</title><style>\n\t\t\t\t@viewport {\n\t\t\t\t\twidth: devicewidth;\n\t\t\t\t\tzoom: 1.0;\n\t\t\t\t}\n\t\t\t</style></head><body><main>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"stylesheet\" href=\"/static/style.css\"><script src=\"/static/wasm/wasm_exec.js\"></script><script>\n\t\t\t\tconst go = new Go();\n\t\t\t\tWebAssembly.instantiateStreaming(fetch(\"/static/wasm/main.wasm\"), go.importObject).then((result) => {\n\t\t\t\t\tgo.run(result.instance);\n\t\t\t\t});\n\t\t\t</script><title>Labels</title></head><body><header><a href=\"/\">Label-Webprint</a></header><hr><main>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -37,7 +37,7 @@ func Layout() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</main></body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</main><style>\n\t\t\t\theader {\n\t\t\t\t\tdisplay: flex;\n\t\t\t\t\tjustify-content: center;\n\t\t\t\t}\n\n\t\t\t\theader a {\n\t\t\t\t\tcolor: var(--light0);\n\t\t\t\t\ttext-decoration: none;\n\t\t\t\t\tfont-weight: bold;\n\t\t\t\t\tfont-size: 32pt;\n\t\t\t\t}\n\t\t\t</style></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

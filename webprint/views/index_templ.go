@@ -41,7 +41,7 @@ func Index() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<h1>Drucken</h1><div><a href=\"/label/hackspace\"><button>Hackspace-Label</button></a> <a href=\"/label/raw\"><button>EPL2</button></a></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"sized-content\"><h2>Drucken</h2><hr><div class=\"print-select\"><a class=\"select-card\" href=\"/label/hackspace\"><button>Hackspace-Label</button></a> <a class=\"select-card\" href=\"/label/raw\"><button>EPL2-Code</button></a></div></div><style>\n\t\t\t.print-select {\n\t\t\t\tdisplay: flex;\n\t\t\t\tflex-wrap: wrap;\n\t\t\t\tgap: 7px;\n\t\t\t}\n\n\t\t\t.select-card {\n\t\t\t\tflex: 1 1 0;\n\t\t\t}\n\n\t\t\t.select-card > button {\n\t\t\t\tbox-sizing: border-box;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 100%;\n\t\t\t\tfont-size: 32pt;\n\t\t\t}\n\t\t</style>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

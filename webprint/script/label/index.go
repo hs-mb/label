@@ -26,6 +26,12 @@ func Raw() {
 	errorText = d.GetElementByID("raw-error")
 	fileUpload = d.GetElementByID("raw-file").(*dom.HTMLInputElement)
 
+	inputFieldChange := func(e dom.Event) {
+		printButton.SetDisabled(inputField.TextLength() == 0)
+	}
+	inputField.AddEventListener("change", false, inputFieldChange)
+	inputFieldChange(nil)
+
 	printButton.AddEventListener("click", false, func(e dom.Event) {
 		text := inputField.Value()
 		go sendPrintServer(text)

@@ -15,17 +15,28 @@ templ Layout() {
 				});
 			</script>
 			<title>Labels</title>
-			<style>
-				@viewport {
-					width: devicewidth;
-					zoom: 1.0;
-				}
-			</style>
 		</head>
 		<body>
+			<header>
+				<a href="/">Label-Webprint</a>
+			</header>
+			<hr/>
 			<main>
 				{ children... }
 			</main>
+			<style>
+				header {
+					display: flex;
+					justify-content: center;
+				}
+
+				header a {
+					color: var(--light0);
+					text-decoration: none;
+					font-weight: bold;
+					font-size: 32pt;
+				}
+			</style>
 		</body>
 	</html>
 }

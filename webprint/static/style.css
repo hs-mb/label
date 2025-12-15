@@ -1,9 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+:root {
+	--primary: #00ADB5;
+	--dark0: #222831;
+	--dark1: #393E46;
+	--light0: #EEEEEE;
+	--light1: #C0C0C0;
+}
+
+@viewport {
+	width: devicewidth;
+	zoom: 1.0;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+}
 
 body {
+	background-color: var(--dark0);
+	color: var(--light0);
+}
+
+* {
 	font-family: "Roboto Slab", serif;
 }
 
-button {
-	width: 100%;
+input[type="file"] {
+	display: none;
 }
+
+button, label:has(> input[type="file"]) {
+	background-color: var(--dark1);
+	padding: 0.5em;
+	border-radius: 0.5em;
+	border-style: solid;
+	border-color: var(--light1);
+	border-width: 2px;
+	color: var(--light0);
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+button:hover, label:has(> input[type="file"]):hover {
+	background-color: var(--dark0);
+}
+
+button:disabled, button[disabled], label:has(> input[type="file"][disabled]) {
+	background-color: var(--dark0);
+	color: var(--light1);
+}
+
+textarea {
+	background-color: var(--dark1);
+	padding: 0.5em;
+	border-radius: 0.5em;
+	border-style: solid;
+	border-color: var(--light1);
+	border-width: 2px;
+	color: var(--light0);
+}
+
+textarea:focus {
+	outline: none !important;
+}
+
+textarea.mono {
+	font-family: "Roboto Mono", monospace;
+}
+
+hr {
+	border-color: var(--light1);
+}
+
+@media only screen and (max-width: 600px) {
+	.sized-content {
+		box-sizing: border-box;
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.sized-content {
+		box-sizing: border-box;
+		width: 80%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.sized-content {
+		box-sizing: border-box;
+		width: 50%;
+	}
+}
+
