@@ -8,9 +8,9 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/hs-mb/label/webprint/views"
-	"github.com/hs-mb/label/webprint/views/label/hackspace"
-	"github.com/hs-mb/label/webprint/views/label/raw"
+	"github.com/hs-mb/etikett/webprint/views"
+	"github.com/hs-mb/etikett/webprint/views/label/hackspace"
+	"github.com/hs-mb/etikett/webprint/views/label/raw"
 )
 
 var StaticDir = "./static"

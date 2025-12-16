@@ -5,9 +5,9 @@ package main
 import (
 	"strings"
 
-	"github.com/hs-mb/label/webprint/script"
-	"github.com/hs-mb/label/webprint/script/label/hackspace"
-	"github.com/hs-mb/label/webprint/script/label/raw"
+	"github.com/hs-mb/etikett/webprint/script"
+	"github.com/hs-mb/etikett/webprint/script/label/hackspace"
+	"github.com/hs-mb/etikett/webprint/script/label/raw"
 	"honnef.co/go/js/dom/v2"
 )
 

@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/hs-mb/label"
+	"github.com/hs-mb/etikett"
 )
 
 var lprBin string

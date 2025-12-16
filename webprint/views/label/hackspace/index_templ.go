@@ -9,8 +9,8 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/hs-mb/label/webprint/views"
-	"github.com/hs-mb/label/webprint/views/label"
+	"github.com/hs-mb/etikett/webprint/views"
+	"github.com/hs-mb/etikett/webprint/views/label"
 )
 
 func Index() templ.Component {

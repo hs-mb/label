@@ -2,11 +2,9 @@ package main
 
 import (
 	"flag"
-	"os/exec"
-	"strings"
 
 	"github.com/hs-mb/eplutil"
-	"github.com/hs-mb/label"
+	"github.com/hs-mb/etikett"
 	"golang.org/x/image/font/opentype"
 
 	_ "embed"

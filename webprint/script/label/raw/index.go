@@ -5,7 +5,7 @@ package raw
 import (
 	"syscall/js"
 
-	"github.com/hs-mb/label/webprint/script/label"
+	"github.com/hs-mb/etikett/webprint/script/label"
 	"honnef.co/go/js/dom/v2"
 )
 
