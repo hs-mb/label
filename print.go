@@ -1,4 +1,4 @@
-package label
+package etikett
 
 import (
 	"os/exec"

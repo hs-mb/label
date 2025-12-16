@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	label "github.com/hs-mb/etikett"
+	"github.com/hs-mb/etikett"
 )
 
 var lprBin string
@@ -27,5 +27,5 @@ func main() {
 }
 
 func makePrint(source string) error {
-	return label.Print(source, printer, lprBin)
+	return etikett.Print(source, printer, lprBin)
 }

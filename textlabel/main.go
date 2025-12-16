@@ -43,7 +43,7 @@ func main() {
 	b.Print(*n)
 
 
-	err := label.Print(printer, b.String())
+	err := etikett.Print(printer, b.String())
 	if err != nil {
 		panic(err)
 	}
