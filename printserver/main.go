@@ -33,5 +33,5 @@ func main() {
 }
 
 func makePrint(source string) error {
-	return etikett.Print(source, printer, lprBin)
+	return etikett.Print(printer, source, lprBin)
 }
