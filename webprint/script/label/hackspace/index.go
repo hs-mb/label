@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/hs-mb/eplutil"
+	"github.com/hs-mb/etikett/webprint"
 	"github.com/hs-mb/etikett/webprint/script/label"
 	"honnef.co/go/js/dom/v2"
 )
@@ -43,6 +44,8 @@ func makeLabel(text string) string {
 	b.FittedText(text, 0, 0, b.Width, b.Height, eplutil.FittedTextOptions{
 		CenterX: true,
 		CenterY: true,
+		LineSpace: 10,
+		Font: webprint.Font,
 	})
 	b.Print(1)
 	return b.String()
