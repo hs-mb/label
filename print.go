@@ -1,6 +1,7 @@
 package etikett
 
 import (
+	"os"
 	"os/exec"
 	"strings"
 )
@@ -12,5 +13,7 @@ func Print(printer string, data string, lprBinArg ...string) error {
 	}
 	cmd := exec.Command(lprBin, "-P", printer, "-o", "raw")
 	cmd.Stdin = strings.NewReader(data)
+	cmd.Stdout = os.Stderr
+	cmd.Stderr = os.Stderr
 	return cmd.Run()
 }
