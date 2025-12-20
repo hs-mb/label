@@ -48,8 +48,10 @@
 					${pkgs.coreutils}/bin/mkdir -p $out/share/${pname}/static/wasm
 				'';
 
+				serveAddr = "0.0.0.0:8080";
+
 				buildPhase = ''
-					${pkgs.go}/bin/go build -o $out/bin/webprint -ldflags="-s -w -X 'main.StaticDir=$out/share/${pname}/static' -X 'main.ServeAddr=0.0.0.0:8080'" ./webprint/server
+					${pkgs.go}/bin/go build -o $out/bin/webprint -ldflags="-s -w -X 'main.StaticDir=$out/share/${pname}/static' -X 'main.ServeAddr=${serveAddr}'" ./webprint/server
 					GOOS=js GOARCH=wasm ${pkgs.go}/bin/go build -o $out/share/${pname}/static/wasm/main.wasm ./webprint/wasm
 				'';
 
