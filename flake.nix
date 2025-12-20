@@ -48,10 +48,8 @@
 					${pkgs.coreutils}/bin/mkdir -p $out/share/${pname}/static/wasm
 				'';
 
-				serveAddr = "0.0.0.0:8080";
-
 				buildPhase = ''
-					${pkgs.go}/bin/go build -o $out/bin/webprint -ldflags="-s -w -X 'main.StaticDir=$out/share/${pname}/static' -X 'main.ServeAddr=${serveAddr}'" ./webprint/server
+					${pkgs.go}/bin/go build -o $out/bin/webprint -ldflags="-s -w -X 'main.StaticDir=$out/share/${pname}/static'" ./webprint/server
 					GOOS=js GOARCH=wasm ${pkgs.go}/bin/go build -o $out/share/${pname}/static/wasm/main.wasm ./webprint/wasm
 				'';
 
@@ -80,7 +78,7 @@
 					${pkgs.coreutils}/bin/cp "$(${pkgs.go}/bin/go env GOROOT)/lib/wasm/wasm_exec.js" ./webprint/static/wasm/wasm_exec.js
 					runwebprint() {
 						GOOS=js GOARCH=wasm ${pkgs.go}/bin/go build -o ./webprint/static/wasm/main.wasm ./webprint/wasm
-						${pkgs.go}/bin/go run -ldflags="-X main.ServeAddr=:8080 -X main.StaticDir=./webprint/static" ./webprint/server ws://127.0.0.1:6245
+						${pkgs.go}/bin/go run -ldflags="-X main.StaticDir=./webprint/static" ./webprint/server :8080 ws://127.0.0.1:6245
 					}
 					export -f runwebprint
 					${pkgs.coreutils}/bin/echo "Watching webprint..."

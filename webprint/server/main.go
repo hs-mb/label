@@ -15,12 +15,12 @@ import (
 )
 
 var StaticDir = "./static"
-var ServeAddr = ":8080"
 
 func main() {
 	flag.Parse()
 
-	printServerAddr := flag.Arg(0)
+	serveAddr := flag.Arg(0)
+	printServerAddr := flag.Arg(1)
 	ctx := context.Background()
 	ctx = context.WithValue(ctx, webprint.PrintAddrKey, printServerAddr)
 
@@ -44,6 +44,6 @@ func main() {
 		img.Index().Render(ctx, w)
 	})
 
-	log.Printf("Listening on %s", ServeAddr)
-	http.ListenAndServe(ServeAddr, mux)
+	log.Printf("Listening on %s", serveAddr)
+	http.ListenAndServe(serveAddr, mux)
 }
