@@ -45,6 +45,7 @@ func makeLabel(text string) string {
 	date := time.Now().Local().Format("02.01.2006")
 	b := eplutil.NewEPLBuilder()
 	header := fmt.Sprintf("Eigentümer    %s", date)
+	b.Label()
 	b.FittedText(header, 50, 0, b.Width - 100, 70, eplutil.FittedTextOptions{
 		CenterX: false,
 		CenterY: true,

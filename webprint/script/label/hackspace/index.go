@@ -41,6 +41,7 @@ func inputChange() {
 
 func makeLabel(text string) string {
 	b := eplutil.NewEPLBuilder()
+	b.Label()
 	b.FittedText(text, 0, 0, b.Width, b.Height, eplutil.FittedTextOptions{
 		CenterX: true,
 		CenterY: true,
