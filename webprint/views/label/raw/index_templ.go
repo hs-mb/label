@@ -58,7 +58,7 @@ func Index() templ.Component {
 					}()
 				}
 				ctx = templ.InitializeContext(ctx)
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<textarea class=\"mono\" id=\"raw-input\" rows=\"15\" placeholder='EPL2-Code, z.B.:&#10;&#10;N&#10;A50,50,0,3,1,1,N,\"Label\"&#10;...'></textarea><p id=\"raw-error\"></p><hr>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<textarea class=\"mono\" id=\"raw-input\" rows=\"15\" placeholder='EPL2-Code, z.B.:&#10;&#10;N&#10;A50,50,0,3,1,1,N,\"Label\"&#10;...'></textarea><hr>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}

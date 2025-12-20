@@ -1,0 +1,33 @@
+package img
+
+import (
+	"github.com/hs-mb/etikett/webprint/views"
+	"github.com/hs-mb/etikett/webprint/views/label"
+)
+
+templ Index() {
+	@views.Layout() {
+		@label.LabelCreation("Bild drucken") {
+			<div class="img-view">
+				<div>
+					<input type="range" min="0" max="255" value="122" id="img-threshold"/>
+					<label for="img-threshold">S/W-Grenzwert</label>
+				</div>
+				<img id="img-preview"></img>
+			</div>
+			@label.Buttons() {
+				<label>
+					<input type="file" id="img-file"/>
+					Datei hochladen
+				</label>
+				<button id="img-print">Drucken</button>
+			}
+
+			<style>
+				.img-view {
+					display: flex;
+				}
+			</style>
+		}
+	}
+}

@@ -12,7 +12,6 @@ import (
 var (
 	inputField *dom.HTMLTextAreaElement
 	printButton *dom.HTMLButtonElement
-	errorText dom.Element
 	fileUpload *dom.HTMLInputElement
 )
 
@@ -21,7 +20,6 @@ func Index() {
 
 	inputField = d.GetElementByID("raw-input").(*dom.HTMLTextAreaElement)
 	printButton = d.GetElementByID("raw-print").(*dom.HTMLButtonElement)
-	errorText = d.GetElementByID("raw-error")
 	fileUpload = d.GetElementByID("raw-file").(*dom.HTMLInputElement)
 
 	inputField.AddEventListener("change", false, inputChange)
